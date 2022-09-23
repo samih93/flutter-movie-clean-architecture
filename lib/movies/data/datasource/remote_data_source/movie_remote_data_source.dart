@@ -21,7 +21,7 @@ class MovieRemoteDataSource implements BaseMovieRemoteDataSource {
   Future<List<Movie>> getNowPlayingMovies() async {
     final response = await Dio().get('${ApiConstances.now_playing_MoviePAth}');
     if (response.statusCode == 200) {
-      return List.from((response.data()['results'] as List)
+      return List.from((response.data['results'] as List)
           .map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerExeption(
