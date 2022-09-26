@@ -7,4 +7,7 @@ class ApiConstances {
       "$base_url/movie/popular?api_key=$api_key";
   static final String topRated_MoviePAth =
       "$base_url/movie/top_rated?api_key=$api_key";
+
+  static final String baseImageUrl = "https://image.tmdb.org/t/p/w500";
+  static String imageUrl(String url) => '$baseImageUrl$url';
 }

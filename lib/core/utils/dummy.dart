@@ -1,4 +1,4 @@
-import 'package:movies_apps/movies/domain/entities/movie.dart';
+import 'package:movie/movies/domain/entities/movie.dart';
 
 List<Movie> moviesList = [
   Movie(

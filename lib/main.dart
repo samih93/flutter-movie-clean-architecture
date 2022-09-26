@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:movie/core/services/services.dart';
 import 'package:movie/movies/presentation/controller/movie_controller.dart';
-import 'package:movie/movies/presentation/screens/movies_screen.dart';
+import 'package:movie/movies/presentation/screens/movie_screen/movies_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  ServicesLocator().init();
   runApp(const MyApp());
 }
 
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
         home: MultiProvider(
           providers: [
             ChangeNotifierProvider<MovieController>(
-                create: (_) => MovieController()),
+                create: (_) => MovieController(sl(), sl(), sl())),
           ],
           child: MoviesScreen(),
         ));

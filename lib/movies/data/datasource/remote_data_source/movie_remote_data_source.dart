@@ -33,7 +33,7 @@ class MovieRemoteDataSource implements BaseMovieRemoteDataSource {
   Future<List<Movie>> getPopularMovies() async {
     final response = await Dio().get('${ApiConstances.popular_MoviePAth}');
     if (response.statusCode == 200) {
-      return List.from((response.data()['results'] as List)
+      return List.from((response.data['results'] as List)
           .map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerExeption(
@@ -45,7 +45,7 @@ class MovieRemoteDataSource implements BaseMovieRemoteDataSource {
   Future<List<MovieModel>> getTopRatedMovies() async {
     final response = await Dio().get('${ApiConstances.topRated_MoviePAth}');
     if (response.statusCode == 200) {
-      return List.from((response.data()['results'] as List)
+      return List.from((response.data['results'] as List)
           .map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerExeption(
