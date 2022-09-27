@@ -11,9 +11,11 @@ import 'package:movie/movies/domain/usecases/get_popular_movies_usecase.dart';
 import 'package:movie/movies/domain/usecases/get_top_rated_movies_usecase.dart';
 
 class MovieController extends ChangeNotifier {
+  
   final GetNowPlayingMoviesUseCase getNowPlayingMoviesUseCase;
   final GetPopularMoviesUseCase getPopularMoviesUseCase;
   final GetTopRatedMoviesUseCase getTopRatedMoviesUseCase;
+
   MovieController(this.getNowPlayingMoviesUseCase, this.getPopularMoviesUseCase,
       this.getTopRatedMoviesUseCase);
 

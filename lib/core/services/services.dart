@@ -19,15 +19,14 @@ class ServicesLocator {
         ));
 
     //Now Playing use cases
-    sl.registerLazySingleton<GetNowPlayingMoviesUseCase>(
-        () => GetNowPlayingMoviesUseCase(sl()));
+    sl.registerLazySingleton(() => GetNowPlayingMoviesUseCase(sl()));
 
     //Popular use cases
     sl.registerLazySingleton(() => GetPopularMoviesUseCase(sl()));
 
     //Top Rated use cases
-    sl.registerLazySingleton<GetTopRatedMoviesUseCase>(
-        () => GetTopRatedMoviesUseCase(sl()));
+    sl.registerLazySingleton(() => GetTopRatedMoviesUseCase(sl()));
+    
 
     //Now Playing repository
     sl.registerLazySingleton<BaseMovieRepository>(() => MovieRepository(sl()));
